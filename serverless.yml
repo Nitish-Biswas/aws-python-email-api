@@ -9,7 +9,7 @@ provider:
   timeout: 30
   memorySize: 512
   environment:
-    SENDER_EMAIL: nitishbiswas066@gmail.com #change to your verfied email
+    SENDER_EMAIL: nitishbiswas066@gmail.com #change to your verified email
     
   iam:
     role:
