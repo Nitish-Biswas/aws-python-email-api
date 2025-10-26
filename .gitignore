@@ -5,6 +5,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+node_modules/
 eggs/
 .eggs/
 lib/
@@ -12,9 +13,11 @@ lib64/
 parts/
 sdist/
 var/
+venv/
 *.egg-info/
 .installed.cfg
 *.egg
-
+package-lock.json
 # Serverless directories
 .serverless
+__pycache__/
