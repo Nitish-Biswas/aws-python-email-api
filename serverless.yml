@@ -1,0 +1,39 @@
+service: python-email-api
+frameworkVersion: '>=4.0.0'
+
+provider:
+  name: aws
+  runtime: python3.12
+  stage: dev
+  region: ap-south-1
+  timeout: 30
+  memorySize: 512
+  environment:
+    SENDER_EMAIL: nitishbiswas066@gmail.com
+    
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - ses:SendEmail
+            - ses:SendRawEmail
+          Resource: "*"
+
+functions:
+  sendEmail:
+    handler: handler.send_email
+    events:
+      - http:
+          path: /send-email
+          method: post
+          cors: true
+          
+plugins:
+  - serverless-python-requirements
+  - serverless-offline
+  
+custom:
+  pythonRequirements:
+    dockerizePip: false
+    slim: true

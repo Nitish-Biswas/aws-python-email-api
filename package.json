@@ -1,0 +1,24 @@
+{
+  "name": "aws-python-email-api",
+  "version": "1.0.0",
+  "description": "Serverless Python API for sending emails",
+  "main": "handler.py",
+  "scripts": {
+    "start": "serverless offline start",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
+  },
+  "devDependencies": {
+    "serverless": "^4.22.0",
+    "serverless-offline": "^14.4.0",
+    "serverless-python-requirements": "^6.1.2"
+  },
+  "overrides": {
+    "serverless-python-requirements": {
+      "serverless": "$serverless"
+    },
+    "serverless-offline": {
+      "serverless": "$serverless"
+    }
+  }
+}
